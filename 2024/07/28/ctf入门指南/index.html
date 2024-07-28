@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="安全">
+    <meta name="description" content="b仔小窝">
+    <meta name="author" content="Blleux">
+    
+    <title>
+        
+            ctf入门指南 |
+        
+        Blleux&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/aa.jpg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Blleux's Blog","author":"Blleux","avatar":"/images/da3.jpg","logo":"/images/aa.jpg","favicon":"/images/aa.jpg"},"menu":{"home":"/","archives":"/archives","b站":"https://space.bilibili.com/415416584","categories":"/categories"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"何处可得卿一顾，吾愿翘首盼终生。","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2024,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.0"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/aa.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Blleux&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" target="_blank" rel="noopener" href="https://space.bilibili.com/415416584">
+                                
+                                B站
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                分类
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" target="_blank" rel="noopener" href="https://space.bilibili.com/415416584">
+                            
+                            B站
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            分类
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        ctf入门指南
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/da3.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Blleux</span>
+                                
+                                    <span class="author-badge">Lv1</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-07-28 12:38:57</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Sun Jul 28 2024 14:57:00 GMT+0800">2024-07-28 14:57:00</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/ctf%E5%85%A5%E9%97%A8/">ctf入门</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%8C%87%E5%8D%97/">指南</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="免责声明"><a href="#免责声明" class="headerlink" title="免责声明"></a>免责声明</h2><p>本人接触ctf时间不长，内容仅供参考，如有错误请联系我改正。</p>
+<h3 id="ctf是什么"><a href="#ctf是什么" class="headerlink" title="ctf是什么"></a>ctf是什么</h3><p>​		ctf就是一种夺旗比赛，是我们网安专业非常重要的比赛形式。ctf有很多不同形式，可以由高校或者安全公司等举办。对于大学生来讲其中较为重要的是教育部认可的<a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MjM5MzI0NTQxNA==&mid=2650204819&idx=1&sn=08d367972914f7e3d8e42208c2826075&chksm=be9bbb1a89ec320ced8cfd82365a696dfa23a4da5cfcdafe980a4604661c4e8c55725f9df255&scene=27" >大学生学科竞赛清单<i class="fas fa-external-link-alt"></i></a>中的<a class="link"   target="_blank" rel="noopener" href="http://www.ciscn.cn/" >全国大学生信息安全竞赛<i class="fas fa-external-link-alt"></i></a>(简称国赛&#x2F;ciscn)。(该比赛认可度高，当然还有很多高质量比赛这里不一一列举了)这里我就非常简单的介绍了一下，信息收集能力很重要，所以其他的多去搜一下。</p>
+<h3 id="打ctf的意义"><a href="#打ctf的意义" class="headerlink" title="打ctf的意义"></a>打ctf的意义</h3><p>​		读大学的意义是什么，抛开理想化的东西不谈，从实际角度出发，大学的最终目的就是就业，找到一份好的工作。很多人认为打ctf毫无意义，比赛与工作相差甚远，打ctf完全是浪费时间。不可否认，ctf并不是唯一出路，我认识的很多好一点的学校网安的朋友，他们也说他们那也有很多不打ctf的通过其他路径找到网安行业或者其他行业的工作。但是，我在这里要说的是ctf或许是一条捷径，这不是说ctf有多简单，相反ctf要花很多功夫去搞。只是相当于其他方式，ctf更加清晰，也更好入手，同时也有很多乐趣。ctf深入以后同样能够接触很多最新的技术，对于工作我们就只是要做好一个转接，以及学习工作中要求的一些技术和工具，他们之间的衔接并没有想象中的那么巨大。特别是对于学校差一点的同学来讲，ctf是一条非常不错的道路，毕竟缺少很多平台的资源，而且也难以其他方式前进。说难听一点，我看到的大多没打ctf的都是在大学混日子，我不是在贬低什么，我只是想说我们要对自己的未来负责，如果对于未来有很好的安排，工作随便找，或者家里很有钱的未来无忧的完全可以当我没说。</p>
+<p>​		还有一点，越早接触越好，不要一直说没有基础打不了，打ctf本身就是一种学习，不要等学校教完了再说打比赛。学校的专业课大多滞后，很多重要的等你学完都应该找实习了。不说网安，所有计算机相关专业都需要自学，想要找到不错的工作必须懂得如何自学。尽早了解ctf掌握学习路径，查漏补缺。</p>
+<h3 id="ctf的分类"><a href="#ctf的分类" class="headerlink" title="ctf的分类"></a>ctf的分类</h3><p>​		ctf一般分为misc(杂项)、crypto(密码)、web(网络)、pwn(二进制)、reserve(逆向)。我们会选这一个或多个方向作为自己的主攻方向。一般来讲会在web、pwn、逆向中选择一个主方向，再涉猎一些misc和crypto。从技术层面来讲pwn和逆向更加接近，都要学习汇编，并且对编程要求很高(c&#x2F;c++是必备的，可以学python写脚本)，而且也会有一些密码学相关的知识。web就他们有非常大的区别了，但是对于很多人来讲更简单一点，学多人也是最多的。misc怎么说呢，我很喜欢，但不适合当主攻方向(除非是那些其他方向的人很多而且都很厉害，缺一个misc主攻手的情况，或者你非常感兴趣)，而且就业很难搞。misc前面更多靠的是工具，多上手了解很快就能入门，像那些隐写什么的技术层面不难，更多是考你脑洞。但是像后面就不轻松了，有很多取证方面的比如流量取证、内存取证等等。或者是其他很多从未见过的东西，毕竟是杂项本来就是其他类型的一个总和，没有单独分出来那就是杂项。所以你会发现很多难一点的比赛的misc方向解的人很少甚至没人。</p>
+<h3 id="ctf的形式"><a href="#ctf的形式" class="headerlink" title="ctf的形式"></a>ctf的形式</h3><p>​		ctf一般分为解题模式，攻防模式，混合模式。一般来讲，入门一般就只了解解题模式就行。攻防模式一般只有在复赛阶段才会出现，初赛就一般是解题模式，有些再加一些知识点答题(知道有就行，不必专门了解，都是现场搞)。还是那句话，自己多搜索多了解。</p>
+<h3 id="简要学习建议"><a href="#简要学习建议" class="headerlink" title="简要学习建议"></a>简要学习建议</h3><p>​		misc：这个就是多搜索，下工具，了解类型，自己有一个系统性的大纲，养成从对题目类型分析，到做题流程规划的一个系统化判断思维。</p>
+<p>​		web：学习web就要了解网络，了解http，还要了解各种漏洞(top10漏洞)，其他的自己搜吧。这里推荐小迪的视频(讲得很好有点口音尽量适应)，我b站动态推荐了的，可以去看看。</p>
+<p>​		pwn&#x2F;reserve：首先要学好编程，c和py等等。还有汇编语言，这里推荐王爽老师的《汇编语言》第四版，这个自己学有点烦，但是学了一门编程后再配合视频就很easy了，我同样推荐在了b站。</p>
+<p>​		crypto：这个就自己学密码学吧，同时要学好编程，这个用python简单一点，因为写起来很方便，而且库很多。</p>
+<p>​		总的来讲，ctf离不开练习，不是说光学习知识点，练习ctf题非常重要，我建议边做题边学习。做题你才知道你需要什么知识，查漏补缺。</p>
+<h3 id="靶场推荐"><a href="#靶场推荐" class="headerlink" title="靶场推荐"></a>靶场推荐</h3><p>​		ctf练习可以在各靶场做，有些题可以自己搭建靶场做，在这就不多说了，自己搜索。我最喜欢的靶场是<a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/" >buuctf<i class="fas fa-external-link-alt"></i></a>没有什么恶心的金币换题机制，缺点就是站内没有wp(Writeup,ctf的解题纪录，也就是答案)需要自己去网上搜(比如搜buuctf misc wp，或者把misc改为题目)，当然网上很多，对我来说毫无影响。除此之外还有<a class="link"   target="_blank" rel="noopener" href="https://adworld.xctf.org.cn/home/play" >攻防世界 <i class="fas fa-external-link-alt"></i></a>、<a class="link"   target="_blank" rel="noopener" href="https://ctf.bugku.com/" >Bugku CTF<i class="fas fa-external-link-alt"></i></a>等等。</p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%8C%87%E5%8D%97/">指南</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E"><span class="nav-text">免责声明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ctf%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">ctf是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93ctf%E7%9A%84%E6%84%8F%E4%B9%89"><span class="nav-text">打ctf的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ctf%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-text">ctf的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ctf%E7%9A%84%E5%BD%A2%E5%BC%8F"><span class="nav-text">ctf的形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E8%A6%81%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE"><span class="nav-text">简要学习建议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%B6%E5%9C%BA%E6%8E%A8%E8%8D%90"><span class="nav-text">靶场推荐</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2024</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Blleux</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">访客数</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">访问量</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E"><span class="nav-text">免责声明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ctf%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">ctf是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93ctf%E7%9A%84%E6%84%8F%E4%B9%89"><span class="nav-text">打ctf的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ctf%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-text">ctf的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ctf%E7%9A%84%E5%BD%A2%E5%BC%8F"><span class="nav-text">ctf的形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E8%A6%81%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE"><span class="nav-text">简要学习建议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%B6%E5%9C%BA%E6%8E%A8%E8%8D%90"><span class="nav-text">靶场推荐</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>
