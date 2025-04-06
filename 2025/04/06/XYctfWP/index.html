@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="安全">
+    <meta name="description" content="b仔小窝">
+    <meta name="author" content="Blleux">
+    
+    <title>
+        
+            XYctfWP |
+        
+        Blleux&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/aa.jpg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Blleux's Blog","author":"Blleux","avatar":"/images/da3.jpg","logo":"/images/aa.jpg","favicon":"/images/aa.jpg"},"menu":{"home":"/","archives":"/archives","b站":"https://space.bilibili.com/415416584","categories":"/categories"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"何处可得卿一顾，吾愿翘首盼终生。","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2024,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.0"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/aa.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Blleux&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" target="_blank" rel="noopener" href="https://space.bilibili.com/415416584">
+                                
+                                B站
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                分类
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" target="_blank" rel="noopener" href="https://space.bilibili.com/415416584">
+                            
+                            B站
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            分类
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        XYctfWP
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/da3.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Blleux</span>
+                                
+                                    <span class="author-badge">Lv1</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-04-06 13:29:23</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Sun Apr 06 2025 15:29:18 GMT+0800">2025-04-06 15:29:18</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/ctfWP/">ctfWP</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/WP/">WP</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="简单说明"><a href="#简单说明" class="headerlink" title="简单说明"></a>简单说明</h1><p>这是2025XYCTF的WP，因为博主清明出去玩了所以只打了部分题。</p>
+<h1 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h1><h3 id="1、XGCTF"><a href="#1、XGCTF" class="headerlink" title="1、XGCTF"></a>1、XGCTF</h3><p><strong>题目内容</strong>：2024年CTFshow举办了一场名为“西瓜杯”的比赛（XGCTF）。其中LamentXU在出题的时候，从某场比赛拉了道原题下来改了改，结果传文件的时候传错了传成原题了。因为这件事LamentXU的损友dragonkeep在他之前的博客上的原题wp上加了一段flag来嘲笑LamentXU。请你找到XGCTF中唯一由LamentXU出的题，并找出这题对应的原题，接着找到dragonkeep师傅的博客，并从博客上讲解该题的博文中找到flag。（hint：dragonkeep师傅因为比较穷买不起域名，因此他博客的域名在dragonkeep的基础上多了个字母）</p>
+<p><strong>解题过程：</strong>这个题算半个社工题吧，很简单。搜索找到博客：<a class="link"   target="_blank" rel="noopener" href="https://dragonkeeep.top/category/CISCN%E5%8D%8E%E4%B8%9C%E5%8D%97WEB-Polluted/%E3%80%82" >https://dragonkeeep.top/category/CISCN%E5%8D%8E%E4%B8%9C%E5%8D%97WEB-Polluted/。<i class="fas fa-external-link-alt"></i></a></p>
+<p>简单翻阅了一下，查看源代码，搜flag就找到了。把密文base64解密得到flag：flag{1t_I3_t3E_s@Me_ChAl1eNge_aT_a1L_P1e@se_fOrg1ve_Me}</p>
+<h3 id="1、Greedymen"><a href="#1、Greedymen" class="headerlink" title="1、Greedymen"></a>1、Greedymen</h3><p><strong>题目内容：</strong>Isn’t it ironic? Greed isn’t limited. Freedom is a limited resource.</p>
+<p><strong>解题过程：</strong>这是个游戏，连接服务器可以选择，2查看规则：There are 3 levels, level 1&#x2F;2&#x2F;3 has number 1 to 50&#x2F;100&#x2F;200 on board to choose from Each number you choose, you get the corresponding points However, your opponent will choose all the factors of the number you choose, and get the points of each factor You can not choose numbers that are already assigned to a player You are only allow to choose the number if it has at least one factor not choosen If you can’t choose anymore, the rest of the board goes to your opponent To make the challenge harder, there is a counter that starts with 19&#x2F;37&#x2F;76 in level 1&#x2F;2&#x2F;3, each time you choose a number, the counter decreases by 1 When it reaches 0, and the game will end, and the unassigned numbers will go to your opponent The challenge is always solvable Player with highest score wins Good Luck!</p>
+<p>翻译一下就是：</p>
+<ol>
+<li>玩法：<ul>
+<li>你选择一个数字，获得该数字对应的分数。</li>
+<li>对手会拿走你选的数字的所有因数（未被选过的），并得到这些因数的分数。</li>
+<li>已分配的数字（你或对手拿过的）不能再被选。</li>
+</ul>
+</li>
+<li>选择限制：<ul>
+<li>你只能选至少还有一个因数未被选的数字。<br>（比如选6时，如果1、2、3都已被对手拿走，则不能选6。）</li>
+<li>如果无法继续选择，剩余所有数字归对手。</li>
+</ul>
+</li>
+</ol>
+<p>可能有其他很简单的办法，我就直接上个笨方法，用脚本直接梭哈。</p>
+<p>&#96;# -<em>- coding: utf-8 -</em>-</p>
+<p>import socket</p>
+<p>import re</p>
+<p>import time</p>
+<p>import random</p>
+<p>from math import sqrt</p>
+<p>from collections import defaultdict</p>
+<p>class ChampionGreedyPlayer:</p>
+<p>  def <strong>init</strong>(self, host, port):</p>
+<p>​    self.host &#x3D; host</p>
+<p>​    self.port &#x3D; port</p>
+<p>​    self.sock &#x3D; None</p>
+<p>​    self.timeout &#x3D; 5</p>
+<p>​    self.buffer_size &#x3D; 4096</p>
+<p>​    </p>
+<p>​    # 增强的游戏状态跟踪</p>
+<p>​    self.all_numbers &#x3D; set()</p>
+<p>​    self.available &#x3D; set()</p>
+<p>​    self.assigned &#x3D; set()</p>
+<p>​    self.my_choices &#x3D; set()</p>
+<p>​    self.opponent_factors &#x3D; set()</p>
+<p>​    self.current_level &#x3D; 1</p>
+<p>​    self.counter &#x3D; 0</p>
+<p>​    self.my_score &#x3D; 0</p>
+<p>​    self.opponent_score &#x3D; 0</p>
+<p>​    self.max_num &#x3D; 50</p>
+<p>  def connect(self):</p>
+<p>​    “””建立服务器连接”””</p>
+<p>​    try:</p>
+<p>​      self.sock &#x3D; socket.socket(socket.AF_INET, socket.SOCK_STREAM)</p>
+<p>​      self.sock.settimeout(self.timeout)</p>
+<p>​      self.sock.connect((self.host, self.port))</p>
+<p>​      print(f”[+] Connected to {self.host}:{self.port}”)</p>
+<p>​      return True</p>
+<p>​    except Exception as e:</p>
+<p>​      print(f”[-] Connection failed: {e}”)</p>
+<p>​      return False</p>
+<p>  def send_recv(self, data):</p>
+<p>​    “””发送数据并接收响应”””</p>
+<p>​    try:</p>
+<p>​      self.sock.sendall((str(data) + “\n”).encode())</p>
+<p>​      print(f”[→] Sent: {data}”)</p>
+<p>​      response &#x3D; self.sock.recv(self.buffer_size).decode().strip()</p>
+<p>​      if response:</p>
+<p>​        print(f”[←] Received:\n{response}”)</p>
+<p>​        if self.parse_response(response):</p>
+<p>​          return None  # 发现flag时停止</p>
+<p>​      return response</p>
+<p>​    except Exception as e:</p>
+<p>​      print(f”[!] Communication error: {e}”)</p>
+<p>​      return None</p>
+<p>  def parse_response(self, response):</p>
+<p>​    “””精确解析服务器响应并更新游戏状态”””</p>
+<p>​    # 检测flag</p>
+<p>​    if ‘flag{‘ in response.lower():</p>
+<p>​      flag &#x3D; re.findall(r’flag{.*?}‘, response, re.IGNORECASE)[0]</p>
+<p>​      print(“\n” + “★”*50)</p>
+<p>​      print(f”★ FLAG FOUND: {flag}”)</p>
+<p>​      print(“★”*50 + “\n”)</p>
+<p>​      return True</p>
+<p>​    # 更新关卡信息</p>
+<p>​    if ‘Level’ in response:</p>
+<p>​      self.current_level &#x3D; int(re.search(r’Level (\d+)’, response).group(1))</p>
+<p>​      self.max_num &#x3D; {1:50, 2:100, 3:200}.get(self.current_level, 50)</p>
+<p>​      self.all_numbers &#x3D; set(range(1, self.max_num+1))</p>
+<p>​      self.counter &#x3D; {1:19, 2:37, 3:76}.get(self.current_level, 19)</p>
+<p>​      print(f”[+] Level {self.current_level}, Max: {self.max_num}, Choices left: {self.counter}”)</p>
+<p>​    # 更新分数</p>
+<p>​    if ‘Your Score:’ in response:</p>
+<p>​      scores &#x3D; re.findall(r’\d+’, response)</p>
+<p>​      if len(scores) &gt;&#x3D; 2:</p>
+<p>​        self.my_score, self.opponent_score &#x3D; map(int, scores[:2])</p>
+<p>​        print(f”[+] Score Me:{self.my_score} Opponent:{self.opponent_score}”)</p>
+<p>​    # 更新可用数字</p>
+<p>​    if ‘Unassigned Numbers:’ in response:</p>
+<p>​      unassigned &#x3D; re.search(r’Unassigned Numbers:\s*[([^]]+)’, response)</p>
+<p>​      if unassigned:</p>
+<p>​        self.available &#x3D; set(map(int, re.findall(r’\d+’, unassigned.group(1))))</p>
+<p>​        self.assigned &#x3D; self.all_numbers - self.available</p>
+<p>​        print(f”[+] Available numbers: {len(self.available)}”)</p>
+<p>​    return False</p>
+<p>  def get_valid_choices(self):</p>
+<p>​    “””获取所有合法可选数字（至少有一个未分配的因数）”””</p>
+<p>​    valid &#x3D; []</p>
+<p>​    for num in self.available:</p>
+<p>​      factors &#x3D; self.get_factors(num)</p>
+<p>​      if any(f not in self.assigned for f in factors if f !&#x3D; num):</p>
+<p>​        valid.append(num)</p>
+<p>​    return valid</p>
+<p>  def make_choice(self):</p>
+<p>​    “””终极选择策略”””</p>
+<p>​    valid_choices &#x3D; self.get_valid_choices()</p>
+<p>​    if not valid_choices:</p>
+<p>​      return None</p>
+<p>​    # 评分函数：净得分 &#x3D; 数字值 - 对手将获得的因数和</p>
+<p>​    def calculate_net_gain(number):</p>
+<p>​      factors &#x3D; set(self.get_factors(number)) - {number}</p>
+<p>​      opponent_gain &#x3D; sum(f for f in factors if f not in self.assigned)</p>
+<p>​      return number - opponent_gain</p>
+<p>​    # 按净得分排序并选择前3个最佳选项</p>
+<p>​    candidates &#x3D; sorted(valid_choices, key&#x3D;calculate_net_gain, reverse&#x3D;True)[:3]</p>
+<p>​    </p>
+<p>​    # 随机选择以避免模式化（如果多个候选得分相同）</p>
+<p>​    return random.choice(candidates) if len(candidates) &gt; 1 else candidates[0]</p>
+<p>  @staticmethod</p>
+<p>  def get_factors(n):</p>
+<p>​    “””获取数字的所有因数（高效实现）”””</p>
+<p>​    factors &#x3D; set()</p>
+<p>​    for i in range(1, int(sqrt(n))+1):</p>
+<p>​      if n % i &#x3D;&#x3D; 0:</p>
+<p>​        factors.add(i)</p>
+<p>​        factors.add(n&#x2F;&#x2F;i)</p>
+<p>​    return factors</p>
+<p>  def play_round(self):</p>
+<p>​    “””处理单个游戏回合”””</p>
+<p>​    while self.counter &gt; 0:</p>
+<p>​      choice &#x3D; self.make_choice()</p>
+<p>​      if not choice:</p>
+<p>​        print(“[!] No valid choices available”)</p>
+<p>​        break</p>
+<p>​      response &#x3D; self.send_recv(str(choice))</p>
+<p>​      if not response or ‘Game Over’ in response or ‘flag’ in response.lower():</p>
+<p>​        break</p>
+<p>​      if ‘BAD CHOICE’ in response:</p>
+<p>​        # 立即更新状态并重试</p>
+<p>​        self.assigned.add(choice)</p>
+<p>​        self.available.discard(choice)</p>
+<p>​        print(f”[!] Invalid choice {choice}, updating state…”)</p>
+<p>​        continue</p>
+<p>​      self.counter -&#x3D; 1</p>
+<p>​      print(f”[+] Choices left: {self.counter}”)</p>
+<p>​      time.sleep(0.3)  # 防止请求过快</p>
+<p>  def play(self):</p>
+<p>​    “””主游戏逻辑”””</p>
+<p>​    if not self.connect():</p>
+<p>​      return</p>
+<p>​    try:</p>
+<p>​      # 开始游戏</p>
+<p>​      response &#x3D; self.send_recv(“1”)  # 选择Play</p>
+<p>​      </p>
+<p>​      while True:</p>
+<p>​        if ‘Choose a Number:’ in response:</p>
+<p>​          self.play_round()</p>
+<p>​          break</p>
+<p>​        elif ‘flag’ in response.lower():</p>
+<p>​          break</p>
+<p>​        elif ‘1.Play’ in response and ‘2.Rules’ in response and ‘3.Quit’ in response:</p>
+<p>​          # 处理菜单选项</p>
+<p>​          response &#x3D; self.send_recv(“1”)  # 继续选择Play</p>
+<p>​        else:</p>
+<p>​          response &#x3D; self.send_recv(“”)  # 继续接收数据</p>
+<p>​    except KeyboardInterrupt:</p>
+<p>​      print(“\n[!] Game stopped by user”)</p>
+<p>​    except Exception as e:</p>
+<p>​      print(f”[!] Game error: {e}”)</p>
+<p>​    finally:</p>
+<p>​      self.sock.close()</p>
+<p>​      print(“[+] Connection closed”)</p>
+<p>if <strong>name</strong> &#x3D;&#x3D; “<strong>main</strong>“:</p>
+<p>  # 配置服务器信息</p>
+<p>  SERVER_IP &#x3D; “47.94.204.178”</p>
+<p>  SERVER_PORT &#x3D; 36969</p>
+<p>  print(“&#x3D;&#x3D;&#x3D; Champion Greedy Number Game Player &#x3D;&#x3D;&#x3D;”)</p>
+<p>  player &#x3D; ChampionGreedyPlayer(SERVER_IP, SERVER_PORT)</p>
+<p>  player.play()&#96;</p>
+<p>根据反馈调试了数十次最终得到exp，但是这个不是稳定输出的要多试几次，因为有可能有些选择无法取得胜利。最后运行得到flag：flag{Greed, is……key of the life.}</p>
+<h2 id="reserve"><a href="#reserve" class="headerlink" title="reserve"></a>reserve</h2><h3 id="1-WARMUP"><a href="#1-WARMUP" class="headerlink" title="1.WARMUP"></a>1.WARMUP</h3><p><strong>题目内容：</strong>签个到吧，flag为flag{}包含的内容进行md5加密并用XYCTF{}包含</p>
+<p><strong>解题过程：</strong>下载是个vbs文件，txt可以查看，参照博客<a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/msjs/p/18809110" >记一次VBS逆向 - 漫宿骄盛 - 博客园<i class="fas fa-external-link-alt"></i></a>。把开头改成<strong>wscript.echo</strong>，就能输出源代码。<img     src="file:///C:\Users\86187\Documents\Tencent Files\1250873075\Image\Group2\3K\~M\3K~M2S8$THWJKN2B[3P39DI.jpg"   alt="img" style="zoom:50%;" ></p>
+<p>这是个RC4加密，逆向就行，exp：</p>
+<p>&#96;from Crypto.Cipher import ARC4</p>
+<p>def rc4_decrypt(cipher_hex, key):</p>
+<p>  cipher_bytes &#x3D; bytes.fromhex(cipher_hex)</p>
+<p>  rc4 &#x3D; ARC4.new(key.encode())</p>
+<p>  plaintext &#x3D; rc4.decrypt(cipher_bytes)</p>
+<p>  return plaintext.decode(‘utf-8’, errors&#x3D;’ignore’)</p>
+<p>encrypted_flag &#x3D; “90df4407ee093d309098d85a42be57a2979f1e51463a31e8d15e2fac4e84ea0df622a55c4ddfb535ef3e51e8b2528b826d5347e165912e99118333151273cc3fa8b2b3b413cf2bdb1e8c9c52865efc095a8dd89b3b3cfbb200bbadbf4a6cd4”</p>
+<p>key &#x3D; “rc4key”</p>
+<p>flag &#x3D; rc4_decrypt(encrypted_flag, key)</p>
+<p>print(“解密得到的Flag:”, flag)&#96;</p>
+<p>得到flag：flag{We1c0me_t0_XYCTF_2025_reverse_ch@lleng3_by_th3_w@y_p3cd0wn‘s_chall_is_r3@lly_gr3@t_&amp;_fuN!}</p>
+<p>把里面的内容md5加密，得到：XYCTF{5F9F46C147645DD1E2C8044325D4F93C}</p>
+<h2 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h2><h3 id="1-Division"><a href="#1-Division" class="headerlink" title="1.Division"></a>1.Division</h3><p><strong>题目内容：</strong>LamentXU学不明白除法了，能教教我吗？（adwa这个骗人的大坏蛋&gt;_&lt;，这个才是签到啊）</p>
+<p><strong>解题过程：</strong>给了服务器的代码：</p>
+<p>&#96;# -<em>- encoding: utf-8 -</em>-</p>
+<p>‘’’</p>
+<p>@File   :  server.py</p>
+<p>@Time   :  2025&#x2F;03&#x2F;20 12:25:03</p>
+<p>@Author  :  LamentXU </p>
+<p>‘’’</p>
+<p>import random </p>
+<p>print(‘—-Welcome to my division calc—-‘)</p>
+<p>print(‘’’</p>
+<p>menu:</p>
+<p>   [1]  Division calc</p>
+<p>   [2]  Get flag</p>
+<p>‘’’)</p>
+<p>while True:</p>
+<p>  choose &#x3D; input(‘: &gt;&gt;&gt; ‘)</p>
+<p>  if choose &#x3D;&#x3D; ‘1’:</p>
+<p>​    try:</p>
+<p>​      denominator &#x3D; int(input(‘input the denominator: &gt;&gt;&gt; ‘))</p>
+<p>​    except:</p>
+<p>​      print(‘INPUT NUMBERS’)</p>
+<p>​      continue</p>
+<p>​    nominator &#x3D; random.getrandbits(32)</p>
+<p>​    if denominator &#x3D;&#x3D; ‘0’:</p>
+<p>​      print(‘NO YOU DONT’)</p>
+<p>​      continue</p>
+<p>​    else:</p>
+<p>​      print(f’{nominator}&#x2F;&#x2F;{denominator} &#x3D; {nominator&#x2F;&#x2F;denominator}’)</p>
+<p>  elif choose &#x3D;&#x3D; ‘2’:</p>
+<p>​    try:</p>
+<p>​      ans &#x3D; input(‘input the answer: &gt;&gt;&gt; ‘)</p>
+<p>​      rand1 &#x3D; random.getrandbits(11000)</p>
+<p>​      rand2 &#x3D; random.getrandbits(10000)</p>
+<p>​      correct_ans &#x3D; rand1 &#x2F;&#x2F; rand2</p>
+<p>​      if correct_ans &#x3D;&#x3D; int(ans):</p>
+<p>​        print(‘WOW’)</p>
+<p>​        with open(‘flag’, ‘r’) as f:</p>
+<p>​          print(f’Here is your flag: {f.read()}’)</p>
+<p>​      else:</p>
+<p>​        print(f’NOPE, the correct answer is {correct_ans}’)</p>
+<p>​    except:</p>
+<p>​      print(‘INPUT NUMBERS’)</p>
+<p>  else:</p>
+<p>​    print(‘Invalid choice’)&#96;</p>
+<p>服务器两个功能：除法计算器和获取flag挑战。1是输入分母，程序随机生成32位分子，计算并输出结果。2是输入一个答案，程序生成两个超大随机数并且计算rand1&#x2F;&#x2F;rand2，判断答案是否正确以输出flag。可以多次（624次，因为其使用 MT19937 算法）调用1获取32位随机数以重建伪随机数生成器从而预测后续rand1和rand2.</p>
+<p>exp：</p>
+<p>&#96;from pwn import *<br>import random</p>
+<p>def untemper(y):</p>
+<p>#逆向MT19937的tempering变换</p>
+<p>​    y ^&#x3D; y &gt;&gt; 18<br>​    y ^&#x3D; (y &lt;&lt; 15) &amp; 0xEFC60000<br>​    y ^&#x3D; ((y &lt;&lt; 7) &amp; 0x9D2C5680) ^ ((y &lt;&lt; 14) &amp; 0x94284000) ^ ((y &lt;&lt; 21) &amp; 0x14200000) ^ ((y &lt;&lt; 28) &amp; 0x10000000)<br>​    y ^&#x3D; (y &gt;&gt; 11) ^ (y &gt;&gt; 22)<br>​    return y</p>
+<p>def main():</p>
+<p>#设置调试模式</p>
+<p>​    context.log_level &#x3D; ‘debug’<br>​    </p>
+<p>#连接服务器</p>
+<p>​    r &#x3D; remote(“47.94.217.82”, 24613)  # 替换为实际目标</p>
+<p>#r &#x3D; process(“.&#x2F;server.py”)  # 本地测试用</p>
+<p>#收集624个32位随机数</p>
+<p>​    samples &#x3D; []<br>​    for i in range(624):<br>​        r.sendlineafter(b”: &gt;&gt;&gt; “, b”1”)<br>​        r.sendlineafter(b”input the denominator: &gt;&gt;&gt; “, b”1”)  # 分母设为1避免除零<br>​        line &#x3D; r.recvline().decode().strip()<br>​        num &#x3D; int(line.split(“&#x2F;&#x2F;“)[0])<br>​        samples.append(num)<br>​        print(f”[+] Collected sample {i+1}&#x2F;624: {num}”)</p>
+<p>#恢复MT19937状态</p>
+<p>​    state &#x3D; [untemper(s) for s in samples]<br>​    </p>
+<p>#创建伪随机数生成器并设置状态</p>
+<p>​    fake_random &#x3D; random.Random()<br>​    fake_random.setstate((<br>​        3,  # MT19937版本号<br>​        tuple(state + [624]),  # 状态数组+索引<br>​        None<br>​    ))<br>​    </p>
+<p>#预测未来的随机数</p>
+<p>​    rand1 &#x3D; fake_random.getrandbits(11000)<br>​    rand2 &#x3D; fake_random.getrandbits(10000)<br>​    correct_ans &#x3D; rand1 &#x2F;&#x2F; rand2<br>​    print(f”[+] Predicted answer: {correct_ans}”)</p>
+<p>#提交答案</p>
+<p>​    r.sendlineafter(b”: &gt;&gt;&gt; “, b”2”)<br>​    r.sendlineafter(b”input the answer: &gt;&gt;&gt; “, str(correct_ans).encode())</p>
+<p>​    try:</p>
+<p>#尝试接收直到出现flag格式</p>
+<p>​        response &#x3D; r.recvuntil(b”}”).decode()<br>​    except:</p>
+<p>#如果失败，接收所有可用数据</p>
+<p>​        response &#x3D; r.clean().decode()<br>​<br>​    print(“[+] Server response:”)<br>​    print(response)</p>
+<p>​    r.close()</p>
+<p>if <strong>name</strong> &#x3D;&#x3D; “<strong>main</strong>“:<br>    main()&#96;</p>
+<p>运行得到flag：XYCTF{5e5cd366-3990-4026-961b-edabc35667dd}</p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/WP/">WP</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/07/28/ctf%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/"
+                                   title="ctf入门指南"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">ctf入门指南</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E8%AF%B4%E6%98%8E"><span class="nav-text">简单说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#misc"><span class="nav-text">misc</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81XGCTF"><span class="nav-text">1、XGCTF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81Greedymen"><span class="nav-text">1、Greedymen</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reserve"><span class="nav-text">reserve</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-WARMUP"><span class="nav-text">1.WARMUP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Crypto"><span class="nav-text">Crypto</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Division"><span class="nav-text">1.Division</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2024</span>&nbsp;-&nbsp;2025
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Blleux</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">访客数</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">访问量</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        $tools-item-width = 2.2rem
+$tools-item-font-size = 1.1rem
+$tools-item-border-radius = 0.2rem
+
+.side-tools-show-handle {
+  transform translateX(100%)
+  opacity 0
+  transition-t("transform, opacity", "0, 0", "0.26, 0.26", "linear, linear")
+
+  &.show {
+    transform translateX(0)
+    opacity 1
+  }
+}
+
+.side-tools-container {
+  .tools-item {
+    width $tools-item-width
+    height $tools-item-width
+    margin-bottom 0.25rem
+    color var(--text-color-3)
+    font-size $tools-item-font-size
+    background var(--background-color-1)
+    border-right none
+    border-radius $tools-item-border-radius
+    box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
+    cursor pointer
+
+    i {
+      color var(--text-color-3)
+    }
+
+    &:hover {
+      color var(--background-color-1)
+      background var(--primary-color)
+      box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
+
+      i {
+        color var(--background-color-1)
+      }
+    }
+
+
+    +keep-tablet() {
+      width $tools-item-width * 0.9
+      height $tools-item-width * 0.9
+      font-size $tools-item-font-size * 0.9
+
+      &.toggle-show-toc-tablet
+      &.go-to-comments-tablet {
+        display flex !important
+      }
+    }
+
+    &.rss {
+
+      a {
+        width 100%
+        height 100%
+        border-radius $tools-item-border-radius
+
+        &:hover {
+          color var(--background-color-1)
+          background var(--primary-color)
+          box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
+        }
+      }
+    }
+
+    &.toggle-show-toc-tablet
+    &.go-to-comments-tablet {
+      display none
+    }
+  }
+
+
+  .exposed-tools-list {
+
+    .tool-scroll-to-top {
+      display none
+
+      &.show {
+        display flex
+      }
+
+
+      &.show-arrow {
+        .percent {
+          display none
+        }
+
+        .arrow {
+          display flex
+        }
+      }
+
+
+      &.show-percent {
+        .percent {
+          display flex
+        }
+
+        .arrow {
+          display none
+        }
+      }
+
+
+      &:hover {
+        .percent {
+          display none
+        }
+
+        .arrow {
+          display flex
+        }
+      }
+
+
+      .percent {
+        font-size 1rem
+      }
+    }
+  }
+}
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E8%AF%B4%E6%98%8E"><span class="nav-text">简单说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#misc"><span class="nav-text">misc</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81XGCTF"><span class="nav-text">1、XGCTF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81Greedymen"><span class="nav-text">1、Greedymen</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reserve"><span class="nav-text">reserve</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-WARMUP"><span class="nav-text">1.WARMUP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Crypto"><span class="nav-text">Crypto</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Division"><span class="nav-text">1.Division</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>
