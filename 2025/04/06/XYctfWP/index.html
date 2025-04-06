@@ -240,7 +240,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Sun Apr 06 2025 15:29:18 GMT+0800">2025-04-06 15:29:18</span>
+                <span class="datetime" data-updated="Sun Apr 06 2025 15:36:20 GMT+0800">2025-04-06 15:36:20</span>
             </span>
         
 
@@ -476,7 +476,7 @@
 <p>  player.play()&#96;</p>
 <p>根据反馈调试了数十次最终得到exp，但是这个不是稳定输出的要多试几次，因为有可能有些选择无法取得胜利。最后运行得到flag：flag{Greed, is……key of the life.}</p>
 <h2 id="reserve"><a href="#reserve" class="headerlink" title="reserve"></a>reserve</h2><h3 id="1-WARMUP"><a href="#1-WARMUP" class="headerlink" title="1.WARMUP"></a>1.WARMUP</h3><p><strong>题目内容：</strong>签个到吧，flag为flag{}包含的内容进行md5加密并用XYCTF{}包含</p>
-<p><strong>解题过程：</strong>下载是个vbs文件，txt可以查看，参照博客<a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/msjs/p/18809110" >记一次VBS逆向 - 漫宿骄盛 - 博客园<i class="fas fa-external-link-alt"></i></a>。把开头改成<strong>wscript.echo</strong>，就能输出源代码。<img     src="file:///C:\Users\86187\Documents\Tencent Files\1250873075\Image\Group2\3K\~M\3K~M2S8$THWJKN2B[3P39DI.jpg"   alt="img" style="zoom:50%;" ></p>
+<p><strong>解题过程：</strong>下载是个vbs文件，txt可以查看，参照博客<a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/msjs/p/18809110" >记一次VBS逆向 - 漫宿骄盛 - 博客园<i class="fas fa-external-link-alt"></i></a>。把开头改成<strong>wscript.echo</strong>，就能输出源代码。</p>
 <p>这是个RC4加密，逆向就行，exp：</p>
 <p>&#96;from Crypto.Cipher import ARC4</p>
 <p>def rc4_decrypt(cipher_hex, key):</p>
@@ -715,131 +715,51 @@
 
     <!-- side tools -->
     <div class="side-tools">
-        $tools-item-width = 2.2rem
-$tools-item-font-size = 1.1rem
-$tools-item-border-radius = 0.2rem
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
 
-.side-tools-show-handle {
-  transform translateX(100%)
-  opacity 0
-  transition-t("transform, opacity", "0, 0", "0.26, 0.26", "linear, linear")
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
 
-  &.show {
-    transform translateX(0)
-    opacity 1
-  }
-}
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
 
-.side-tools-container {
-  .tools-item {
-    width $tools-item-width
-    height $tools-item-width
-    margin-bottom 0.25rem
-    color var(--text-color-3)
-    font-size $tools-item-font-size
-    background var(--background-color-1)
-    border-right none
-    border-radius $tools-item-border-radius
-    box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
-    cursor pointer
+        <!-- rss -->
+        
 
-    i {
-      color var(--text-color-3)
-    }
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
 
-    &:hover {
-      color var(--background-color-1)
-      background var(--primary-color)
-      box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
-      i {
-        color var(--background-color-1)
-      }
-    }
+        
 
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
 
-    +keep-tablet() {
-      width $tools-item-width * 0.9
-      height $tools-item-width * 0.9
-      font-size $tools-item-font-size * 0.9
-
-      &.toggle-show-toc-tablet
-      &.go-to-comments-tablet {
-        display flex !important
-      }
-    }
-
-    &.rss {
-
-      a {
-        width 100%
-        height 100%
-        border-radius $tools-item-border-radius
-
-        &:hover {
-          color var(--background-color-1)
-          background var(--primary-color)
-          box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
-        }
-      }
-    }
-
-    &.toggle-show-toc-tablet
-    &.go-to-comments-tablet {
-      display none
-    }
-  }
-
-
-  .exposed-tools-list {
-
-    .tool-scroll-to-top {
-      display none
-
-      &.show {
-        display flex
-      }
-
-
-      &.show-arrow {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      &.show-percent {
-        .percent {
-          display flex
-        }
-
-        .arrow {
-          display none
-        }
-      }
-
-
-      &:hover {
-        .percent {
-          display none
-        }
-
-        .arrow {
-          display flex
-        }
-      }
-
-
-      .percent {
-        font-size 1rem
-      }
-    }
-  }
-}
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
 
     </div>
 
