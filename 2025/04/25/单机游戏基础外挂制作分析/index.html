@@ -240,7 +240,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Mon Apr 28 2025 19:16:08 GMT+0800">2025-04-28 19:16:08</span>
+                <span class="datetime" data-updated="Mon Apr 28 2025 19:27:59 GMT+0800">2025-04-28 19:27:59</span>
             </span>
         
 
@@ -329,8 +329,8 @@
 <p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F20.png" ></p>
 <p>最下面内存那就变了，我们右键选择整数无符号32位，看到第一个值正好是我们的阳光值。</p>
 <p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F21.png"  alt="21"></p>
-<p>右边寄存器哪里可以看到esi是0x019，也就是25，是我们种植后剩余的阳光值。我们就这代码有了初步的认识，也就是esi存储的改之后的阳光值赋值给存储阳光的这个地址。因为代码附近没有主代码下面有个jmp跳转，我们点过去看看，这里是原版和杂交版的一个小区别，原版就不需要跳转的。</p>
-<p>我没看到这明显就是改阳光值的代码了，’sub esi,ebx’下一句是跳转到我们刚才种植访问的那个地址，那这应该就是控制种植减少阳光的了，sub是减，esi上面说过是存储改之后的阳光，那就判断出这里ebx存储的是种植所需的阳光值。</p>
+<p>右边寄存器哪里可以看到esi是0x019，也就是25，是我们种植后剩余的阳光值。我们就对这行代码有了初步的认识，也就是esi存储的改之后的阳光值赋值给存储阳光的这个地址。因为代码附近没有主代码下面有个jmp跳转，我们点过去看看，这里是原版和杂交版的一个小区别，原版就不需要跳转的。</p>
+<p>我们看到这明显就是改阳光值的代码了，’sub esi,ebx’下一句是跳转到我们刚才种植访问的那个地址，那这应该就是控制种植减少阳光的了，sub是减，esi上面说过是存储改之后的阳光，那就判断出这里ebx存储的是种植所需的阳光值。</p>
 <p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F22.png"  alt="22"></p>
 <p>这里我们可以修改减阳光这行代码，按空格将sub改为add，我们就能实现种植时加阳光了。这样改之后并不能修改程序，退出后代码会恢复的，这里我们就要打补丁来实现对程序的修改。</p>
 <p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F23.png"  alt="23"></p>
