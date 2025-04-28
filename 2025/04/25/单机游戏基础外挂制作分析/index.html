@@ -240,7 +240,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Mon Apr 28 2025 18:41:08 GMT+0800">2025-04-28 18:41:08</span>
+                <span class="datetime" data-updated="Mon Apr 28 2025 19:16:08 GMT+0800">2025-04-28 19:16:08</span>
             </span>
         
 
@@ -291,6 +291,51 @@
                          <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a><strong>说明</strong></h3><p>逆向破解很有意思，这里我们就从最最简单的修改无加密的单机游戏数值来入门，我们以去年很火的植物大战僵尸杂交版为例来实现无限阳光破解版的制作，文章参考了b站的一些大佬的视频。</p>
 <h3 id="破解过程"><a href="#破解过程" class="headerlink" title="破解过程"></a><strong>破解过程</strong></h3><p>首先我们使用CE工具，扫描阳光初始值，种植后进行再次扫描，这里只有这一个，当然这种方法不一定能找到，因为可能是浮点值或者加密过的。</p>
 <p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F%E5%9B%BE%E7%89%871.png"  alt="12"></p>
+<p>这里我们把该地址的值改成900可以看到阳光确实改变了，如果会用就能每次改这个数据从而有无限阳光了。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F2.png"  alt="2"></p>
+<p>但是这远远满足不了我们，还有很多步骤需要完成，首先我们不能每次阳光少了就要改这个值很不方便。这个很简单只需要把激活点上就能让阳光值一直是我们改写的值。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F3.png"  alt="3"></p>
+<p>第二点就是这只能在这次的游戏中用，当我们重新点开游戏就会发现这个地址不能修改阳光了。重新扫描就能发现地址换到其他地方了，这说明这只是每次启动随机的一个存储地址而不是阳光的基地址。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F4.png"  alt="4"></p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F5.png"  alt="5"></p>
+<p>我们右键查看什么访问了这个地址。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F6.png" ></p>
+<p>改变阳光后就能看到一个地址，是从这的命令改写的那个随机的地址。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F7.png"  alt="7"></p>
+<p>根据该地址的指针数值再次扫描，出现了很多地址，选个特别的查看什么访问了，不要选变化的或者19开头的栈地址。没有访问的就不是我们需要的。这里要耐心找，都试一试。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F8.png"  alt="8"></p>
+<p>地址就是从标红那来的，扫描新的这个，看到几个绿色的exe很有可能就是基地址了。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F9.png" ></p>
+<p>全部弄下来，下面就是计算地址是否和之前的符合，双击地址勾选指针加上最后一个红色加的偏移值768和前一个5560，可以看到地址符合。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F10.png"  alt="10"></p>
+<p>添加偏移后我们就能看到和随机地址的值一样了，可以修改了。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F11.png"  alt="11"></p>
+<p>重新开始就能看到随机地址不是阳光值了，而我们基地址偏移的还能用。这样我们就解决了第二个问题。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F12.png"  alt="12"></p>
+<p>接着我们就要考虑一个问题，如果我们想不使用ce直接运行就能开挂怎么办。我们先确定基址，将之前我们得到的基址和偏移记录下来。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F13.png"  alt="13"></p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F14.png"  alt="14"></p>
+<p>然后我们来看什么改写了基址，选指针指向的地址。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F15.png"  alt="15"></p>
+<p>我们种植减少阳光就能看到这个汇编代码和他的地址。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F16.png"  alt="16"></p>
+<p>都纪录下来</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F17.png"  alt="17"></p>
+<p>之后我们可以使用xdbg，因为这游戏是32位的所以我们使用x32dbg。附加后点符号双击游戏的模块。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F18.png"  alt="18"></p>
+<p>Ctrl+G搜索我们之前得到的种植访问的地址，加上备注。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F19.png"  alt="19"></p>
+<p>这里加断点，重新种植后程序就停这了，右键这行代码选择在内存窗口中转到。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F20.png" ></p>
+<p>最下面内存那就变了，我们右键选择整数无符号32位，看到第一个值正好是我们的阳光值。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F21.png"  alt="21"></p>
+<p>右边寄存器哪里可以看到esi是0x019，也就是25，是我们种植后剩余的阳光值。我们就这代码有了初步的认识，也就是esi存储的改之后的阳光值赋值给存储阳光的这个地址。因为代码附近没有主代码下面有个jmp跳转，我们点过去看看，这里是原版和杂交版的一个小区别，原版就不需要跳转的。</p>
+<p>我没看到这明显就是改阳光值的代码了，’sub esi,ebx’下一句是跳转到我们刚才种植访问的那个地址，那这应该就是控制种植减少阳光的了，sub是减，esi上面说过是存储改之后的阳光，那就判断出这里ebx存储的是种植所需的阳光值。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F22.png"  alt="22"></p>
+<p>这里我们可以修改减阳光这行代码，按空格将sub改为add，我们就能实现种植时加阳光了。这样改之后并不能修改程序，退出后代码会恢复的，这里我们就要打补丁来实现对程序的修改。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F23.png"  alt="23"></p>
+<p>保存导出后放到运行环境里（也就是原来的exe的位置），运行后就能得到种植无限加阳光的版本了。</p>
+<p><img   src="https://bb-1353791731.cos.ap-chengdu.myqcloud.com/p%2F24.png"  alt="24"></p>
 
                     
                 </div>
